@@ -3,11 +3,11 @@ const assets = "/assets"
 module.exports = {
     title: "Quique developer website",
     author: "Quique",
-    email: process.env.EMAIL,
+    email: "enponsba@gmail.com",
     description: "Portfolio de Quique Pons, desarrollador de software con conocimientos de Tecnologías Web (Angular, Vue, WebRTC) e Inteligencia Artificial (Tensorflow, sklearn, Keras), así como Docker para contenerización y despliegue.",
     photo: `profile.jpeg`,
     assets,
-    site: `${process.env.PROTOCOL}://${process.env.DOMAIN}`,
+    site: `https://quiquetech.page`,
     now: new Date(),
     color: {
         "pallete_white": "#F1F2F1",
