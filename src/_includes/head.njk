@@ -1,0 +1,27 @@
+{% include "meta/html.njk" %}
+<title>{{ renderData.title or title or metadata.title }}</title>
+
+{# CSS, Javascript, and Favicon #}
+{% set favicon %} {{metadata.assets}}/images/favicon.ico {% endset %}
+<link rel="shortcut icon" type="image/x-icon" href="{{ favicon | url }}" />
+
+{% if layout == "base" %}
+    <script async custom-element="amp-fx-collection" src="https://cdn.ampproject.org/v0/amp-fx-collection-0.1.js"></script>
+    {% set css %}
+        {% include "css/base.css" %}
+    {% endset %}
+
+    <style amp-custom>
+        {{ css | cssmin | safe }}
+    </style>
+
+{% endif %}
+
+{% if layout == "post" %}
+    <script async custom-element="amp-social-share" src="https://cdn.ampproject.org/v0/amp-social-share-0.1.js"></script>
+
+{% endif %}
+
+{% include "meta/seo.njk" %}
+{% include "meta/opengraph.njk" %}
+{% include "meta/twitter.njk" %}

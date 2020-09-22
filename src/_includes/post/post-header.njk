@@ -1,0 +1,33 @@
+<section class="blog-header">
+    <h2 class="title" itemprop="name headline">
+        <a href="{{ page.url | url }}">
+            {{ renderData.title or title or metadata.title }}
+        </a>
+    </h2>
+    <div class="field">
+        {% if (author or metadata.author) %}
+        <span class="meta_author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            {% set photo %}{{metadata.assets}}/images/{{ photo or metadata.photo }}/{% endset %}
+            <amp-img class="author_photo" itemprop="image" height="60" width="60" src="{{ photo | url }}" />
+            <span itemprop="name">{{ author or metadata.author }}</span>
+        </span>
+        {% endif %}
+
+        <span class="meta_published" itemprop="datePublished">
+            <time datetime="{{ page.date | date() }}" itemprop="datePublished">
+                <span class="timeago"> {{ page.date | date('Y-MM-DD hh:mm:ss') }} </span>
+            </time>
+        </span>
+
+        <span class="tags">
+            {% for tag in tags %}
+            {% set tagUrl %}/tags/{{ tag | slug }}/{% endset %}
+            <a href="{{ tagUrl | url }}">
+                <span class="tag">
+                    <span class="fa fa-tag"></span> {{ tag }}
+                </span>
+            </a>
+            {% endfor %}
+        </span>
+    </div>
+</section>

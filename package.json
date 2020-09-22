@@ -10,6 +10,12 @@
   "author": "Enrique Pons <quique@quiquetech.com>",
   "license": "ISC",
   "devDependencies": {
-    "@11ty/eleventy": "^0.11.0"
+    "@11ty/eleventy": "^0.11.0",
+    "@11ty/eleventy-plugin-rss": "^1.0.9",
+    "axios": "^0.20.0",
+    "clean-css": "^4.2.3",
+    "dotenv": "^8.2.0",
+    "html-minifier": "^4.0.0",
+    "moment": "^2.28.0"
   }
 }

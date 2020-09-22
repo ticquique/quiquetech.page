@@ -1,0 +1,18 @@
+{% extends "base.njk" %}
+{% block main %}
+
+
+<amp-social-share type="twitter" aria-label="Share on Twitter"></amp-social-share>
+
+<main role="main">
+    {% include "post/post-header.njk" %}
+    <article class="blog-body" itemprop="articleBody">
+        <div class="blog-content">
+            {{ content | safe }}
+        </div>
+    </article>
+    <section class="blog-footer">
+        {% include "post/post-footer.njk" %}
+    </section>
+</main>
+{% endblock %}
